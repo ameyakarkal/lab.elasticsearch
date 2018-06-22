@@ -1,12 +1,30 @@
 version: '3'
 volumes:
-  elasticsearch:
+  es-master-01:
+  es-data-01:
+  es-data-02:
 services:
-  elasticsearch : 
+  es-master-01 : 
     image:  elasticsearch:5.5.2
-    container_name: elasticsearch
+    container_name: es-master-01
     volumes:
-      - elasticsearch:/usr/share/elasticsearch/data
-      - ../config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+      - es-master-01:/usr/share/elasticsearch/data
+      - ../config/es-master-01.yml:/usr/share/elasticsearch/config/elasticsearch.yml
     ports:
     - "9200:9200"
+  es-data-01 : 
+    image:  elasticsearch:5.5.2
+    container_name: es-data-01
+    volumes:
+      - es-data-01:/usr/share/elasticsearch/data
+      - ../config/es-data-01.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+    ports:
+    - "9201:9201"
+  es-data-02 : 
+    image:  elasticsearch:5.5.2
+    container_name: es-data-02
+    volumes:
+      - es-data-02:/usr/share/elasticsearch/data
+      - ../config/es-data-02.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+    ports:
+    - "9202:9202"

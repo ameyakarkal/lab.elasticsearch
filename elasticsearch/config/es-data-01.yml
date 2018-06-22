@@ -1,0 +1,6 @@
+action.auto_create_index: false
+indices.cache.cleanup_interval: 1h
+network.host: 0.0.0.0
+http.port: 9201
+node.name: es-data-01
+cluster.name : es-cluster-01
