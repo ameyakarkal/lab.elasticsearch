@@ -1,5 +1,4 @@
 action.auto_create_index: false
 indices.cache.cleanup_interval: 1h
 network.host: 0.0.0.0
-node.name: es-node-master-01
 cluster.name : es-cluster-01
