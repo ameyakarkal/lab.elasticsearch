@@ -31,9 +31,9 @@ services:
       ES_JAVA_OPTS: "-Xms1g -Xmx1g"
     volumes:
       - es-data-01:/usr/share/elasticsearch/data
-      - ../config/es.yml:/usr/share/elasticsearch/config/elasticsearch.yml
-    # ports:
-    # - "9201:9201"
+      - ../config/es-data-01.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+    ports:
+    - "9201:9201"
     networks:
     - es-network
   es-data-02 : 
