@@ -1,0 +1,12 @@
+action.auto_create_index: false
+indices.cache.cleanup_interval: 1h
+network.host: 0.0.0.0
+transport.host: 0.0.0.0
+node.master: true
+node.data: false
+node.name: es-master-01
+cluster.name : es-cluster-01
+discovery.zen.ping.unicast.hosts:
+ - es-master-01
+ - es-data-01
+ - es-data-02
