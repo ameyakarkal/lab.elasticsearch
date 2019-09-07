@@ -11,12 +11,12 @@ services:
     container_name: es-master-01
     environment:
       ES_SERVICE_NAME: es-master-01
-      ES_MASTER_NODE: "true"
-      ES_DATA_NODE: "false"
+      # ES_MASTER_NODE: "true"
+      # ES_DATA_NODE: "false"
       ES_JAVA_OPTS: "-Xms1g -Xmx1g"
     volumes:
       - es-master-01:/usr/share/elasticsearch/data
-      - ../config/es.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+      - ../config/es-master-01.yml:/usr/share/elasticsearch/config/elasticsearch.yml
     ports:
     - "9200:9200"
     networks:
@@ -26,8 +26,8 @@ services:
     container_name: es-data-01
     environment:
       ES_SERVICE_NAME: es-data-01
-      ES_MASTER_NODE: "false"
-      ES_DATA_NODE: "true"
+      # ES_MASTER_NODE: "false"
+      # ES_DATA_NODE: "true"
       ES_JAVA_OPTS: "-Xms1g -Xmx1g"
     volumes:
       - es-data-01:/usr/share/elasticsearch/data
@@ -41,12 +41,12 @@ services:
     container_name: es-data-02
     environment:
       ES_SERVICE_NAME: es-data-02
-      ES_MASTER_NODE: "false"
-      ES_DATA_NODE: "true"
+      # ES_MASTER_NODE: "false"
+      # ES_DATA_NODE: "true"
       ES_JAVA_OPTS: "-Xms1g -Xmx1g"
     volumes:
       - es-data-02:/usr/share/elasticsearch/data
-      - ../config/es.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+      - ../config/es-data-02.yml:/usr/share/elasticsearch/config/elasticsearch.yml
     # ports:
     # - "9202:9202"
     networks:
